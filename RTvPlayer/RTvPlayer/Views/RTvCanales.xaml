@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xamarians="clr-namespace:Xamarians.MediaPlayer;assembly=Xamarians.MediaPlayer"
+             x:Class="RTvPlayer.Views.RTvCanales"
+             Title="{Binding Title}" Icon="{Binding Icon}" IsBusy="{Binding IsBusy}" BackgroundColor="#e5e5e5">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout x:Name="outerStack" Orientation="Vertical" Spacing="10" Padding="10"  >
+                <StackLayout x:Name="innerStack" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <Image Aspect="AspectFit" Source="ilceicono.png" HeightRequest = "16" />
+                    <Label Text="ILCE Player" TextColor="Black" />
+                </StackLayout>
+                <xamarians:VideoPlayer x:Name="VideoPlayer" WidthRequest="320" HeightRequest="240" AutoPlay="True" />
+                <Label x:Name="Canal" Text="ILCE - Radio y Televisión" TextColor="Black" />
+                <Grid x:Name="innerGrid">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="20" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="{Binding screenSizeHeight}" />
+                        <RowDefinition Height="{Binding screenSizeHeight}" />
+                        <RowDefinition Height="{Binding screenSizeHeight}" />
+                    </Grid.RowDefinitions>
+                    <BoxView BackgroundColor="#E64E13" Grid.ColumnSpan="2"  Grid.Column="1" Grid.Row="0" />
+                    <Image Source="canaliberoamericano_gray.png" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center" />
+                    <Button x:Name="PlayAprButton" Opacity="0" Grid.Column="1" Grid.Row="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Clicked="PlayCIAButton_OnClicked" />
+                    <BoxView BackgroundColor="#6A1F7F" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="1" />
+                    <Image Source="canal15_gray.png" Grid.Column="1" Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center" />
+                    <Button x:Name="PlayIngButton" Opacity="0" Grid.Column="1" Grid.Row="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Clicked="PlayCSSButton_OnClicked" />
+                    <BoxView BackgroundColor="#C71F1F" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="2" />
+                    <Image Source="iberoamericaradio_gray.png" Grid.Column="1" Grid.Row="2" VerticalOptions="Center" HorizontalOptions="Center" />
+                    <Button x:Name="PlayTSButton" Opacity="0" Grid.Column="1" Grid.Row="2" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Clicked="PlayCIRButton_OnClicked" />
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
