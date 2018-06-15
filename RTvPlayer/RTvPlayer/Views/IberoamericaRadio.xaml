@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mediaPlayer="clr-namespace:Xamarians.MediaPlayer;assembly=Xamarians.MediaPlayer"
+             x:Class="RTvPlayer.Views.IberoamericaRadio"
+             Title="{Binding Title}" Icon="{Binding Icon}" IsBusy="{Binding IsBusy}">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout x:Name="outerStack" Orientation="Vertical" Spacing="10" Padding="10" >
+                <StackLayout x:Name="innerStack" Orientation="Horizontal" HorizontalOptions="End">
+                    <Image Aspect="AspectFit" Source="ilceicono.png" HeightRequest = "16" HorizontalOptions="End" />
+                    <Label x:Name="ilceLabel" Text="ILCE Audio Player" TextColor="#1D5CB7" FontSize="10" HorizontalOptions="End" VerticalOptions="EndAndExpand"/>
+                </StackLayout>
+                <mediaPlayer:VideoPlayer x:Name="AudioPlayerIR" WidthRequest="320" HeightRequest="240" Source="http://201.159.130.34:8080/radioilce.mp3" AutoPlay="True" />
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="AHORA EN VIVO" TextColor="#1D5CB7" FontSize="10" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Image Source="iberoamericaradio_gray.png" HeightRequest="35" VerticalOptions="Center" HorizontalOptions="Center" />
+                </StackLayout>
+                <Grid x:Name="Canales" Padding="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100" />
+                        <RowDefinition Height="100" />
+                    </Grid.RowDefinitions>
+
+                    <BoxView Grid.Column="0" Grid.Row="0" BackgroundColor="#000000"/>
+                    <Image x:Name="imgRecuadroCI" Source="canaliberoamericano_recuadro.png" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center" />
+                    <Image x:Name="imgPlayButtonCI" Source="button_play.png" Grid.Column="0" Grid.Row="0" HeightRequest="40" VerticalOptions="Center" HorizontalOptions="Center" />
+                    <Button x:Name="btnPlayCI" Opacity="0" Grid.Column="0" Grid.Row="0" IsVisible="True" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Clicked="BtnPlayCI_OnClicked" />
+                    <StackLayout Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" VerticalOptions="Center" Padding="25">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="   EN VIVO   " TextColor="#FFFFFF" BackgroundColor="#1D5CB7" FontSize="Micro" HorizontalOptions="Start" VerticalOptions="Center"/>
+                            <Label Text="Canal Iberoamericano" TextColor="#1D5CB7" FontSize="Micro" HorizontalOptions="Start" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <Label Text="Canal Iberoamericano" FontSize="Small" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    </StackLayout>
+
+                    <BoxView Grid.Column="0" Grid.Row="1" BackgroundColor="#000000"/>
+                    <Image x:Name="imgRecuadroSS" Source="summasaberes_recuadro.png" Grid.Column="0" Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center" />
+                    <Image x:Name="imgPlayButtonSS" Source="button_play.png" Grid.Column="0" Grid.Row="1" HeightRequest="40" VerticalOptions="Center" HorizontalOptions="Center" />
+                    <Button x:Name="btnPlaySS" Opacity="0" Grid.Column="0" Grid.Row="1" IsVisible="True" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Clicked="BtnPlaySS_OnClicked" />
+                    <StackLayout Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" VerticalOptions="Center" Padding="25">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="   EN VIVO   " TextColor="#FFFFFF" BackgroundColor="#1D5CB7" FontSize="Micro" HorizontalOptions="Start" VerticalOptions="Center"/>
+                            <Label Text="Summa Saberes" TextColor="#1D5CB7" FontSize="Micro" HorizontalOptions="Start" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <Label Text="Summa Saberes" FontSize="Small" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

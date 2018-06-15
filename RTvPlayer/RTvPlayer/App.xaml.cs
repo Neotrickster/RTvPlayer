@@ -9,8 +9,10 @@ namespace RTvPlayer
 		{
 			InitializeComponent();
 
-			MainPage = new RTvCanales();
-		}
+            //MainPage = new IberoamericaRadio(); //CanalIberoamericano(); //RTvCanales();
+		    MainPage = new NavigationPage(new RadioTelevisionCanales());
+            NavigationPage.SetHasNavigationBar(MainPage, false);
+        }
 
 		protected override void OnStart ()
 		{
