@@ -14,7 +14,7 @@
                 <mediaPlayer:VideoPlayer x:Name="VideoPlayerCI" WidthRequest="320" HeightRequest="240" Source="http://apreal04.triara.com:1935/redirect/canaliberoamericano1/live.mp4?scheme=m3u8" AutoPlay="True" />
                 <StackLayout Orientation="Horizontal" >
                     <Label Text="AHORA EN VIVO" TextColor="#1D5CB7" FontSize="10" HorizontalOptions="Center" VerticalOptions="Center"/>
-                    <Image Source="canaliberoamericano_gray.png" HeightRequest="40" VerticalOptions="Center" HorizontalOptions="Center" />
+                    <Image Source="canaliberoamericano.png" HeightRequest="40" VerticalOptions="Center" HorizontalOptions="Center" />
                 </StackLayout>
                 <Grid x:Name="Canales" Padding="10">
                     <Grid.ColumnDefinitions>

@@ -7,15 +7,28 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout x:Name="outerStack" Orientation="Vertical" Spacing="10" Padding="10"  >
-                <StackLayout x:Name="innerStack" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                    <Image Aspect="AspectFit" Source="ilceicono.png" HeightRequest = "16" />
-                    <Label Text="ILCE Player" TextColor="Black" />
-                </StackLayout>
-                <xamarians:VideoPlayer x:Name="VideoPlayer" WidthRequest="320" HeightRequest="240" AutoPlay="True" />
+                <Grid x:Name="innerStack" BackgroundColor="#1D5CB7">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30" />
+                    </Grid.RowDefinitions>
+                    <Image Aspect="AspectFit" Source="ilce_white.png" Grid.Column="0" HeightRequest = "20" VerticalOptions="Center" />
+                    <Image Aspect="AspectFit" Source="ilce_player_white.png" Grid.Column="1" HeightRequest = "20" VerticalOptions="Center" />
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Aspect="AspectFit" Source="pantalla_radio.png" Grid.Column="0" HeightRequest = "240" HorizontalOptions="Center" />
+                    <xamarians:VideoPlayer x:Name="VideoPlayer" WidthRequest="320" HeightRequest="240" AutoPlay="True" />
+                </Grid>
                 <Label x:Name="Canal" Text="ILCE - Radio y Televisión" TextColor="Black" />
                 <Grid x:Name="innerGrid">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="10" />
                         <ColumnDefinition Width="1*" />
                         <ColumnDefinition Width="20" />
                     </Grid.ColumnDefinitions>
@@ -24,14 +37,14 @@
                         <RowDefinition Height="{Binding screenSizeHeight}" />
                         <RowDefinition Height="{Binding screenSizeHeight}" />
                     </Grid.RowDefinitions>
-                    <BoxView BackgroundColor="#E64E13" Grid.ColumnSpan="2"  Grid.Column="1" Grid.Row="0" />
-                    <Image Source="canaliberoamericano_gray.png" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center" />
+                    <BoxView BackgroundColor="#FFBD21" Grid.ColumnSpan="3"  Grid.Column="0" Grid.Row="0" />
+                    <Image Source="ci_white.png" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" HeightRequest="60" HorizontalOptions="Center" />
                     <Button x:Name="PlayAprButton" Opacity="0" Grid.Column="1" Grid.Row="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Clicked="PlayCIAButton_OnClicked" />
-                    <BoxView BackgroundColor="#6A1F7F" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="1" />
-                    <Image Source="canal15_gray.png" Grid.Column="1" Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center" />
+                    <BoxView BackgroundColor="#FA2F6F" Grid.ColumnSpan="3" Grid.Column="0" Grid.Row="1" />
+                    <Image Source="canal15_white.png" Grid.Column="1" Grid.Row="1" VerticalOptions="Center" HeightRequest="60" HorizontalOptions="Center" />
                     <Button x:Name="PlayIngButton" Opacity="0" Grid.Column="1" Grid.Row="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Clicked="PlayCSSButton_OnClicked" />
-                    <BoxView BackgroundColor="#C71F1F" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="2" />
-                    <Image Source="iberoamericaradio_gray.png" Grid.Column="1" Grid.Row="2" VerticalOptions="Center" HorizontalOptions="Center" />
+                    <BoxView BackgroundColor="#44BDAC" Grid.ColumnSpan="3" Grid.Column="0" Grid.Row="2" />
+                    <Image Source="ibero_radio_white.png" Grid.Column="1" Grid.Row="2" VerticalOptions="Center" HeightRequest="60" HorizontalOptions="Center" />
                     <Button x:Name="PlayTSButton" Opacity="0" Grid.Column="1" Grid.Row="2" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Clicked="PlayCIRButton_OnClicked" />
                 </Grid>
             </StackLayout>

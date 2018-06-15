@@ -21,7 +21,15 @@ namespace RTvPlayer.Views
 		    VideoPlayerCI.FullScreenStatusChanged += VideoPlayer_FullScreenStatusChanged;
         }
 
-	    private void VideoPlayer_FullScreenStatusChanged(object sender, bool value)
+        
+        //https:/auri.net/2016/11/20/how-to-setting-up-macos-x-sierra-on-virtualbox-for-xamarin-development-with-visual-studio/
+
+        //http:/bitsof.net/xamarin-ios-apps-without-physical-mac/
+
+        //https:/plus.google.com/+SysAdminsHowtos/posts/6e98eRghsw1
+         
+
+        private void VideoPlayer_FullScreenStatusChanged(object sender, bool value)
 	    {
 	        NavigationPage.SetHasNavigationBar(this, !value);
 	    }

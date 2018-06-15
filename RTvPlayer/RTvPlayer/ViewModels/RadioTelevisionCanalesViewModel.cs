@@ -14,7 +14,7 @@ namespace RTvPlayer.ViewModels
             Title = "ILCE - Radio y Televisión";
 
             var size = Plugin.XamJam.Screen.CrossScreen.Current.Size;
-            screenSizeHeight = (int)((size.Height - 270) / 4);
+            screenSizeHeight = (int)((size.Height - 50) / 4);
         }
     }
 }

@@ -9,7 +9,10 @@ using Android.OS;
 
 namespace RTvPlayer.Droid
 {
-    [Activity(Label = "RTvPlayer", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "RTv Player", Icon = "@drawable/icon", Theme = "@style/MyTheme.Splash", MainLauncher = true, 
+        ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation,
+        ScreenOrientation = ScreenOrientation.Portrait) //fijar la orientación a portrait
+    ]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle bundle)

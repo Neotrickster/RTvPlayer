@@ -11,10 +11,17 @@
                     <Image Aspect="AspectFit" Source="ilceicono.png" HeightRequest = "16" HorizontalOptions="End" />
                     <Label x:Name="ilceLabel" Text="ILCE Audio Player" TextColor="#1D5CB7" FontSize="10" HorizontalOptions="End" VerticalOptions="EndAndExpand"/>
                 </StackLayout>
-                <mediaPlayer:VideoPlayer x:Name="AudioPlayerIR" WidthRequest="320" HeightRequest="240" Source="http://201.159.130.34:8080/radioilce.mp3" AutoPlay="True" />
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Aspect="AspectFit" Source="pantalla_radio.png" Grid.Column="0" HeightRequest = "240" HorizontalOptions="Center" />
+                    <mediaPlayer:VideoPlayer x:Name="AudioPlayerIR" Grid.Column="0" WidthRequest="320" HeightRequest="240" Source="http://201.159.130.34:8080/radioilce.mp3" AutoPlay="True" Opacity="0.5" />
+                </Grid>
+
                 <StackLayout Orientation="Horizontal" >
                     <Label Text="AHORA EN VIVO" TextColor="#1D5CB7" FontSize="10" HorizontalOptions="Center" VerticalOptions="Center"/>
-                    <Image Source="iberoamericaradio_gray.png" HeightRequest="35" VerticalOptions="Center" HorizontalOptions="Center" />
+                    <Image Source="iberoamericaradio.png" HeightRequest="35" VerticalOptions="Center" HorizontalOptions="Center" />
                 </StackLayout>
                 <Grid x:Name="Canales" Padding="10">
                     <Grid.ColumnDefinitions>
