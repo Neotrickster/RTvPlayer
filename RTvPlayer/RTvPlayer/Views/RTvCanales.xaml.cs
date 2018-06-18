@@ -19,9 +19,47 @@ namespace RTvPlayer.Views
 		    BindingContext = new RTvCanalesViewModel();
 		}
 
-	    private void PlayCIAButton_OnClicked(object sender, EventArgs e)
+	    private double _width = 0;
+	    private double _height = 0;
+
+	    protected override void OnSizeAllocated(double width, double height)
 	    {
-	        VideoPlayer.Source = "http://apreal04.triara.com:1935/redirect/ilcea/live.mp4?scheme=m3u8";
+	        base.OnSizeAllocated(width, height); //must be called
+	        if (this._width != width || this._height != height)
+	        {
+	            this._width = width;
+	            this._height = height;
+	            //reconfigurar layout cuando se gira el teléfono
+	            if (width > height)
+	            {
+	                //outerStack.Orientation = StackOrientation.Horizontal;
+	                //outterScroll.IsVisible = true;
+	                innerStack.IsVisible = false;
+	                outerStack.BackgroundColor = Color.Black;
+	                //this.BackgroundColor = Color.Aqua;
+	                //innerGrid.IsVisible = false;
+	                //Canal.IsVisible = false;
+	                //VideoPlayer.
+	                //InvalidateMeasure();
+	            }
+	            else
+	            {
+	                //outerStack.Orientation = StackOrientation.Vertical;
+	                //outterScroll.IsVisible = false;
+	                innerStack.IsVisible = true;
+	                outerStack.BackgroundColor = Color.White;
+	                //this.BackgroundColor = Color.Chartreuse;
+	                //innerGrid.IsVisible = true;
+	                //Canal.IsVisible = true;
+	                //Canal.Text = Canal.Text + "(" + this._width + ")" + "(" + this._height + ")";
+	                //InvalidateMeasure();
+	            }
+	        }
+	    }
+
+        private void PlayCIAButton_OnClicked(object sender, EventArgs e)
+	    {
+	        VideoPlayer.Source = "http://apreal04.triara.com:1935/redirect/canaliberoamericano1/live.mp4?scheme=m3u8";
             VideoPlayer.Stop();
 	        VideoPlayer.Play();
 	        VideoPlayer.Opacity = 1;
@@ -30,7 +68,7 @@ namespace RTvPlayer.Views
 
 	    private void PlayCSSButton_OnClicked(object sender, EventArgs e)
 	    {
-	        VideoPlayer.Source = "http://apreal04.triara.com:1935/redirect/canaliberoamericano1/live.mp4?scheme=m3u8";
+	        VideoPlayer.Source = "http://apreal04.triara.com:1935/redirect/ilcea/live.mp4?scheme=m3u8";
 	        VideoPlayer.Stop();
             VideoPlayer.Play();
 	        VideoPlayer.Opacity = 1;

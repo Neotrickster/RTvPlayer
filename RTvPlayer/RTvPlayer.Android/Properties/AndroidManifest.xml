@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.ILCE.apps.RTvPlayerv1" android:installLocation="auto">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.ILCE.apps.RTvPlayerv2" android:installLocation="auto">
 	<uses-sdk android:minSdkVersion="15" />
-	<application android:label="RTv Player v1"></application>
+	<application android:label="RTv Player v2"></application>
 </manifest>

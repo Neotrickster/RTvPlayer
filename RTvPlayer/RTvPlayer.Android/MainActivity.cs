@@ -9,7 +9,7 @@ using Android.OS;
 
 namespace RTvPlayer.Droid
 {
-    [Activity(Label = "RTv Player", Icon = "@drawable/icon", Theme = "@style/MyTheme.Splash", MainLauncher = true, 
+    [Activity(Label = "RTv Player", Icon = "@drawable/icon_white", Theme = "@style/MyTheme.Splash", MainLauncher = true, 
         ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation,
         ScreenOrientation = ScreenOrientation.Portrait) //fijar la orientación a portrait
     ]
